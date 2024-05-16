@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing Space</title>
+    <title>Immediate Writing</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
     <div class="container">
-        <textarea class="writing-space" placeholder="musings..." autofocus></textarea>
+        <textarea class="writing-space" placeholder="Start writing..."></textarea>
         <div class="button-container">
+            <button id="menu">Menu</button>
             <button id="toggle-mode">Light</button>
             <button id="save-text">Save</button>
         </div>
     </div>
-    <script>
-        document.getElementById('toggle-mode').addEventListener('click', function() {
-            const body = document.body;
-            body.classList.toggle('dark-mode');
-            body.classList.toggle('light-mode');
-            this.textContent = body.classList.contains('dark-mode') ? 'Light' : 'Dark';
-        });
-
-        document.getElementById('save-text').addEventListener('click', function() {
-            const textArea = document.querySelector('.writing-space');
-            const text = textArea.value;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const anchor = document.createElement('a');
-            anchor.download = 'musings.txt';
-            anchor.href = window.URL.createObjectURL(blob);
-            anchor.target = '_blank';
-            anchor.style.display = 'none';
-            document.body.appendChild(anchor);
-            anchor.click();
-            document.body.removeChild(anchor);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 
