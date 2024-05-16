@@ -6,29 +6,57 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #3e3b3a; /* Dull brownish-grey background */
-    color: #d3d3d3; /* Slightly off-white text */
 }
 
 .container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .writing-space {
     width: 40%; /* 40% of the horizontal space */
     height: 90%; /* 90% of the vertical space */
     padding: 20px;
-    border: 1px solid #5c5b5a;
+    border: 1px solid;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 16px;
     line-height: 1.5;
-    background-color: #2c2b2a; /* Slightly darker background for the text area */
-    color: #d3d3d3; /* Slightly off-white text */
     resize: none;
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #3e3b3a; /* Dull brownish-grey background */
+    color: #d3d3d3; /* Slightly off-white text */
+}
+
+.dark-mode .writing-space {
+    background-color: #2c2b2a; /* Slightly darker background for the text area */
+    color: #d3d3d3; /* Slightly off-white text */
+    border-color: #5c5b5a;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #f0f0f0; /* Light background */
+    color: #000000; /* Black text */
+}
+
+.light-mode .writing-space {
+    background-color: #ffffff; /* White background for the text area */
+    color: #000000; /* Black text */
+    border-color: #ccc;
 }
