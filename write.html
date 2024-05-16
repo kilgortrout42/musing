@@ -9,8 +9,10 @@
 <body class="dark-mode">
     <div class="container">
         <textarea class="writing-space" placeholder="musings..." autofocus></textarea>
-        <button id="toggle-mode">Light</button>
-        <button id="save-text">Save</button>
+        <div class="button-container">
+            <button id="save-text">Save</button>
+            <button id="toggle-mode">Light</button>
+        </div>
     </div>
     <script>
         document.getElementById('toggle-mode').addEventListener('click', function() {
