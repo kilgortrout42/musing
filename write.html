@@ -6,9 +6,18 @@
     <title>Writing Space</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-mode">
     <div class="container">
-        <textarea class="writing-space" placeholder="Start writing here..." autofocus></textarea>
+        <button id="toggle-mode">Switch to Light Mode</button>
+        <textarea class="writing-space" placeholder="musings..." autofocus></textarea>
     </div>
+    <script>
+        document.getElementById('toggle-mode').addEventListener('click', function() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            this.textContent = body.classList.contains('dark-mode') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        });
+    </script>
 </body>
 </html>
