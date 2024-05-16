@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <textarea class="writing-space" placeholder="Start writing here..."></textarea>
+        <textarea class="writing-space" placeholder="Start writing here..." autofocus></textarea>
     </div>
 </body>
 </html>
