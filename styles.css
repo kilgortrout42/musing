@@ -65,17 +65,19 @@ button {
 
 /* Light Mode */
 .light-mode {
-    background-color: #f0f0f0;
-    color: #000000;
+    background-color: #2c2b2a;
+    color: #2c2b2a;
 }
 
 .light-mode .writing-space {
-    background-color: #ffffff;
+    background-color: #ffe6c8;
+    color: #2c2b2a;
 }
 
 .light-mode button {
-    border-color: #ccc;
-    background-color: #ffffff;
+    border-color: #2c2b2a;
+    background-color: #ffe6c8;
+    color: #2c2b2a;
     color: rgba(0, 0, 0, 0.7); /* 30% dimmer color */
 }
 

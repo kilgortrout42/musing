@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleModeBtn.addEventListener('click', function() {
         document.body.classList.toggle('light-mode');
         if (document.body.classList.contains('light-mode')) {
-            toggleModeBtn.textContent = 'Dark';
+            toggleModeBtn.textContent = 'dark';
         } else {
-            toggleModeBtn.textContent = 'Light';
+            toggleModeBtn.textContent = 'light';
         }
     });
 
