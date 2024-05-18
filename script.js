@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleModeBtn.addEventListener('click', function() {
         document.body.classList.toggle('light-mode');
         if (document.body.classList.contains('light-mode')) {
-            toggleModeBtn.textContent = 'dark';
+            toggleModeBtn.textContent = 'Dark';
         } else {
-            toggleModeBtn.textContent = 'light';
+            toggleModeBtn.textContent = 'Light';
         }
     });
 
@@ -26,4 +26,3 @@ document.addEventListener('DOMContentLoaded', function() {
         URL.revokeObjectURL(url);
     });
 });
-
