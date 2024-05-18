@@ -57,6 +57,8 @@ body {
     position: absolute;
     bottom: 10px;
     right: 15px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 button {
@@ -101,3 +103,26 @@ button {
     color: rgba(0, 0, 0, 0.7); /* 30% dimmer color */
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 80vh;
+    }
+
+    .writing-space {
+        height: calc(100% - 50px); /* Adjust height to account for buttons */
+    }
+
+    .button-container {
+        right: 15px;
+        bottom: 15px;
+        justify-content: space-between;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 12px;
+        margin-left: 10px;
+    }
+}
