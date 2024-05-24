@@ -6,12 +6,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Ensure no scrollbars on body */
+    background-color: #3e3b3a; /* Dark mode background color */
+    color: #d3d3d3; /* Dark mode text color */
 }
 
 .container {
-    position: relative;
-    width: 40%;
-    height: 90vh;
+    position: absolute;
+    top: 15px; /* Fixed buffer from the top */
+    bottom: 15px; /* Fixed buffer from the bottom */
+    width: 40%; /* Width of the writing space container */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,8 +24,8 @@ body {
 
 .writing-space {
     width: 100%;
-    height: 100%;
-    padding: 20px;
+    height: calc(100% - 30px); /* Total height minus top and bottom padding */
+    padding: 15px;
     border: 1px solid #5c5b5a;
     border-radius: 5px;
     background-color: #2c2b2a;
@@ -30,23 +34,48 @@ body {
     font-size: 16px;
     line-height: 1.5;
     box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    outline: none; /* Remove default focus outline */
+}
+
+/* Scrollbar styling for WebKit-based browsers */
+.writing-space::-webkit-scrollbar {
+    width: 6px;  /* Adjust the width of the scrollbar */
+}
+
+.writing-space::-webkit-scrollbar-track {
+    background: #2c2b2a;  /* Same as the text area background */
+}
+
+.writing-space::-webkit-scrollbar-thumb {
+    background: #5c5b5a;  /* Slightly lighter to stand out */
+    border-radius: 3px;  /* Adjust the roundness of the scrollbar thumb */
+}
+
+/* Scrollbar styling for other browsers */
+.writing-space {
+    scrollbar-width: thin;  /* Adjust the width of the scrollbar */
+    scrollbar-color: #5c5b5a #2c2b2a;  /* Adjust scrollbar colors */
 }
 
 .button-container {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 2px;  /* Fixed buffer from the bottom of the writing space */
+    right: 2px;   /* Fixed buffer from the right side of the writing space */
+    display: flex;
+    gap: 5px;  /* Space between buttons */
 }
 
 button {
-    padding: 5px 15px;
-    font-size: 14px;
+    padding: 5px 15px;  /* Adjust button padding */
+    font-size: 14px;    /* Adjust font size */
     cursor: pointer;
     border: 1px solid #5c5b5a;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #2c2b2a;
     color: rgba(211, 211, 211, 0.7); /* 30% dimmer color */
-    margin-left: 5px;
 }
 
 /* Dark Mode */
@@ -65,20 +94,45 @@ button {
 
 /* Light Mode */
 .light-mode {
-    background-color: #2c2b2a;
-    color: #2c2b2a;
+    background-color: #3e3b3a;
+    color: #000000;
 }
 
 .light-mode .writing-space {
-    background-color: #ffe6c8;
+    background-color: #ffffff;
     color: #2c2b2a;
 }
 
 .light-mode button {
-    border-color: #2c2b2a;
-    background-color: #ffe6c8;
-    color: #2c2b2a;
+    border-color: #ccc;
+    background-color: #ffffff;
     color: rgba(0, 0, 0, 0.7); /* 30% dimmer color */
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust the width for mobile devices */
+        height: 80vh; /* Adjust the height for mobile devices */
+    }
 
+    .writing-space {
+        height: calc(100% - 30px); /* Adjust height to account for top and bottom padding */
+    }
+
+    .button-container {
+        right: 5px;
+        bottom: 5px;
+    }
+
+    button {
+        padding: 10px;    /* Adjust button padding for mobile */
+        font-size: 12px;  /* Adjust font size for mobile */
+        margin-left: 5px; /* Adjust margin between buttons for mobile */
+    }
+}
+
+/* Adjust the writing space height when keyboard is visible */
+.keyboard-visible .writing-space {
+    height: calc(70% - 50px); /* Adjust this value as needed for the buffer */
+}

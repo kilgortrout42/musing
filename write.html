@@ -5,29 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>musing...</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body class="dark-mode">
     <div class="container">
-        <textarea class="writing-space" autofocus placeholder="musing..."></textarea>
+        <textarea id="writing-space" class="writing-space" autofocus placeholder="musing..."></textarea>
         <div class="button-container">
-            <!--<button id="...">Menu</button>-->
-            <button id="toggle-mode">light</button>
-            <button id="save-text">save</button>
+            <button id="menu">Menu</button>
+            <button id="toggle-mode">Light</button>
+            <button id="save-text">Save</button>
         </div>
     </div>
     <script src="script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-    </script>
 </body>
 </html>
-
